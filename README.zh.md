@@ -13,7 +13,7 @@
 | 代码 | `src/` | 训练（baseline / TPS / 各对照）、评测、出图 |
 | 飞行数据 | `data/fieldH/` | 331 张 DJI Air 3S 照片（2048×1152）、COLMAP 文本模型、高度表 |
 | 结果表 | `results/` | 各配置指标、统计检验、消融 |
-| 文档 | `docs/` | 复现流程、结果说明 |
+| 文档 | `docs/` | 复现流程、结果说明、[`VERIFY.md`](docs/VERIFY.md) 复算记录 |
 
 ## 环境
 
@@ -39,7 +39,7 @@ python src/mini_train.py --data_dir data/fieldH --factor 4 --max_images 331 \
 python src/train_ours.py --data_dir data/fieldH --factor 4 --max_images 331 \
     --max_steps 30000 --sh_degree 2 --refine_stop 12000 \
     --loss_mode roi --h_roi_weight 3.0 --h_radius_m 6.0 --salience_strength 0 \
-    --out outputs/v4_fieldH/seed0_ours
+    --out outputs/v4_fieldH/seed0_lossonly
 
 # 3) 评测与汇总
 python src/eval_recon_v4.py --data_dir data/fieldH --root outputs/v4_fieldH --seeds 0 1 2

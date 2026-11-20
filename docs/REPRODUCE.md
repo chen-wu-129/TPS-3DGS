@@ -50,7 +50,7 @@ for s in 0 1 2; do
   # TPS, w = 3 (ROI weighting only, densification criterion untouched)
   python src/train_ours.py $COMMON --seed $s \
       --loss_mode roi --h_roi_weight 3 --h_radius_m 6 --salience_strength 0 \
-      --out $ROOT/seed${s}_ours
+      --out $ROOT/seed${s}_lossonly
 
   # weight sweep
   python src/train_ours.py $COMMON --seed $s \
@@ -101,7 +101,7 @@ python src/train_ours.py $COMMON --seed 0 --loss_mode roi --h_roi_weight 3 \
     --salience_strength 0 --event_log --out outputs/probe_w3_events
 
 # synthetic viewpoints (for the closed-loop / detector side, not used in the paper)
-python src/render_synthetic_v2.py --data_dir data/fieldH --ply outputs/v4_fieldH/seed0_ours/mini_trained.ply \
+python src/render_synthetic_v2.py --data_dir data/fieldH --ply outputs/v4_fieldH/seed0_lossonly/mini_trained.ply \
     --tag ours --out outputs/synthetic
 python src/eval_synth_closed.py --help
 ```
@@ -113,7 +113,7 @@ python src/eval_synth_closed.py --help
 `results/` already holds these runs; to regenerate them you need the same checkpoints:
 
 ```bash
-python src/eval_altitude.py --data_dir data/fieldH --ply outputs/v4_fieldH/seed0_ours/mini_trained.ply \
+python src/eval_altitude.py --data_dir data/fieldH --ply outputs/v4_fieldH/seed0_lossonly/mini_trained.ply \
     --factor 4 --out outputs/eval_ours_altsweep
 ```
 

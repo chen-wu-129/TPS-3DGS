@@ -13,7 +13,7 @@ This repository contains the code, the flight images and the sparse reconstructi
 | Code | `src/` | training (baseline / TPS / controls), evaluation, figure scripts |
 | Flight data | `data/fieldH/`, `data/jxfx/` | 331 + 117 DJI Air 3S images (2048×1152), COLMAP text models, altitude tables, hash manifest |
 | Result tables | `results/` | all per-configuration metrics, statistics and ablations |
-| Docs | `docs/` | reproduction protocol, results walk-through |
+| Docs | `docs/` | reproduction protocol, results walk-through, [`VERIFY.md`](docs/VERIFY.md) verification record |
 
 Not included: trained `.ply` models (1–2 GB each, regenerable with the commands below).
 
@@ -79,7 +79,7 @@ python src/mini_train.py --data_dir data/fieldH --factor 4 --max_images 331 \
 python src/train_ours.py --data_dir data/fieldH --factor 4 --max_images 331 \
     --max_steps 30000 --sh_degree 2 --refine_stop 12000 \
     --loss_mode roi --h_roi_weight 3.0 --h_radius_m 6.0 --salience_strength 0 \
-    --out outputs/v4_fieldH/seed0_ours
+    --out outputs/v4_fieldH/seed0_lossonly
 
 # 3) dose–response sweep (w = 5)
 python src/train_ours.py --data_dir data/fieldH --loss_mode roi --h_roi_weight 5.0 \
