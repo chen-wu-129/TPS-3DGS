@@ -151,7 +151,7 @@ Training cost per 30k-iteration run at `factor 4`: ≈23 min, ≈2.0 GB peak, �
   author  = {Wu, Chen and others},
   journal = {The Visual Computer},
   year    = {2026},
-  note    = {Code and data: https://github.com/<your-account>/TPS-3DGS}
+  note    = {Code and data: https://github.com/chen-wu-129/TPS-3DGS}
 }
 ```
 
