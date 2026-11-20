@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper below."
+title: TPS-3DGS
+abstract: "Targeted Photometric Supervision for small-target reconstruction of VTOL landing-pad markings with 3D Gaussian Splatting. Reference implementation, flight data and result tables."
+version: 1.0.0
+date-released: 2026-11-20
+license: MIT
+repository-code: "https://github.com/<your-account>/TPS-3DGS"
+authors:
+  - family-names: Wu
+    given-names: Chen
+    affiliation: Jiangxi Flight University
+preferred-citation:
+  type: article
+  title: "Targeted Photometric Supervision for Small-Target Reconstruction of VTOL Landing-Pad Markings with 3D Gaussian Splatting"
+  authors:
+    - family-names: Wu
+      given-names: Chen
+  journal: The Visual Computer
+  year: 2026

@@ -1,0 +1,4 @@
+# data/** 里的飞行照片是二进制大文件，用 LFS 存储
+data/** filter=lfs diff=lfs merge=lfs -text
+*.JPG filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text

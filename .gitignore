@@ -1,0 +1,10 @@
+# 训练/评测产物不上传
+outputs/
+*.ply
+*.pt
+*.npy
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db

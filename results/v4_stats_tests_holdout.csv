@@ -1,0 +1,28 @@
+﻿# 重建质量 3 seeds 均值±SD
+config,full-PSNR,H-PSNR,n_gauss
+base,24.237±0.147,22.006±0.253,"1,993,400"
+budget,24.197±0.168,21.882±0.207,"1,981,545"
+lossonly,24.269±0.040,22.741±0.202,"1,985,299"
+salonly,24.154±0.149,21.761±0.081,"1,944,552"
+ours,24.081±0.084,22.021±0.189,"1,917,358"
+
+# 配对检验（vs base 标准口径 / vs budget 同代码路径口径）
+reference,config,metric,delta,p,95%CI,cohen_d,all_seeds_positive
+vs标准基线base,lossonly,H-PSNR,+0.735,0.0000,"[+0.575,+0.896]",0.82,是
+vs标准基线base,lossonly,full-PSNR,+0.032,0.6295,"[-0.080,+0.167]",0.05,否
+vs标准基线base,salonly,H-PSNR,-0.245,0.0125,"[-0.426,-0.068]",-0.26,否
+vs标准基线base,salonly,full-PSNR,-0.083,0.2427,"[-0.206,+0.058]",-0.12,否
+vs标准基线base,ours,H-PSNR,+0.014,0.9055,"[-0.220,+0.232]",0.01,否
+vs标准基线base,ours,full-PSNR,-0.156,0.1350,"[-0.368,+0.031]",-0.15,否
+vs同代码路径W1(budget),lossonly,H-PSNR,+0.859,0.0000,"[+0.696,+1.027]",1.01,是
+vs同代码路径W1(budget),lossonly,full-PSNR,+0.072,0.0877,"[-0.005,+0.153]",0.17,否
+vs同代码路径W1(budget),salonly,H-PSNR,-0.121,0.1750,"[-0.290,+0.050]",-0.14,否
+vs同代码路径W1(budget),salonly,full-PSNR,-0.042,0.4647,"[-0.145,+0.059]",-0.07,否
+vs同代码路径W1(budget),ours,H-PSNR,+0.139,0.2072,"[-0.079,+0.349]",0.13,否
+vs同代码路径W1(budget),ours,full-PSNR,-0.116,0.1971,"[-0.306,+0.031]",-0.13,否
+vs标准基线base,lossonly,n_gauss,"1,985,299",0.364,-0.41%,,
+vs标准基线base,salonly,n_gauss,"1,944,552",0.004,-2.45%,,
+vs标准基线base,ours,n_gauss,"1,917,358",0.002,-3.81%,,
+vs同代码路径W1(budget),lossonly,n_gauss,"1,985,299",0.644,+0.19%,,
+vs同代码路径W1(budget),salonly,n_gauss,"1,944,552",0.021,-1.87%,,
+vs同代码路径W1(budget),ours,n_gauss,"1,917,358",0.005,-3.24%,,
