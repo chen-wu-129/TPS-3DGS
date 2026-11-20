@@ -4,14 +4,14 @@
 
 3D Gaussian Splatting reconstructs landing-pad markings poorly: strokes bleed across their boundaries, take the colour of the surrounding turf, and fragment. We trace this to **Photometric Supervision Dilution (PSD)** — the image-averaged loss divides every residual by the total pixel count `HW`, so the normalized screen-space gradient reaching the marking region stays at `0.04τ–0.32τ`, a factor of 3–25 below the densification threshold, and the primitives inside the marking are neither fitted nor refined. **TPS** projects an altitude-adaptive screen-space ROI analytically from the positional prior of vertiport markings and reweights the loss inside it, leaving the renderer, the densification criterion and the inference cost untouched. With `w = 3` the marking-region H-PSNR improves by **+0.74 dB** (95 % CI [+0.58, +0.90], p < 0.0001, consistent across three seeds) with no significant change in full-image PSNR (`+0.03 dB`, p = 0.63).
 
-This repository contains the code, the flight images and the sparse reconstruction of the single-scene study, plus every result table behind the paper.
+This repository contains the code, the flight images and the sparse reconstructions of both scenes (the main fieldH study and the jxfx generalisation scene behind Table 10), plus every result table behind the paper.
 
 ## What is released
 
 | Part | Path | Content |
 |---|---|---|
 | Code | `src/` | training (baseline / TPS / controls), evaluation, figure scripts |
-| Flight data | `data/fieldH/` | 331 DJI Air 3S images (2048×1152), COLMAP text model, altitude table |
+| Flight data | `data/fieldH/`, `data/jxfx/` | 331 + 117 DJI Air 3S images (2048×1152), COLMAP text models, altitude tables, hash manifest |
 | Result tables | `results/` | all per-configuration metrics, statistics and ablations |
 | Docs | `docs/` | reproduction protocol, results walk-through |
 
